@@ -3,6 +3,7 @@ set encoding=utf-8
 scriptencoding utf-8
 set nocompatible
 set number
+set numberwidth=3
 syntax enable
 set expandtab
 set shiftwidth=4
@@ -15,6 +16,7 @@ set showcmd
 set ignorecase
 set nobackup
 set incsearch
+set wrap
 nnoremap <silent><Esc><Esc> :<C-u>setnohlsearch!<CR>
 set cursorline
 set wildmenu
@@ -22,13 +24,8 @@ set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 " /basic rules
-"
-"
-"
-"
-"
-"
 
+set ruler
 " key map
 noremap j gj
 noremap k gk
@@ -91,7 +88,28 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'w0ng/vim-hybrid'
+
+" setting vim-airline
+let g:airline#extensions#tabline#enabled=1
+nmap <C-p> <Plug>AirlineSelectPrevTab
+nmap <C-n> <Plug>AirlineSelectNextTab
+let g:airline#extensions#tabline#buffer_idx_format={
+    \ '0': '0 ',
+    \ '1': '1 ',
+    \ '2': '2 ',
+    \ '3': '3 ',
+    \ '4': '4 ',
+    \ '5': '5 ',
+    \ '6': '6 ',
+    \ '7': '7 ',
+    \ '8': '8 ',
+    \ '9': '9 '
+    \}
+" /setting vim-airline
 
 " auto complement syntax
 if has('lua')
@@ -120,6 +138,7 @@ endif
 call neobundle#end()
 
 " color scheme
+autocmd ColorScheme * highlight LineNr ctermfg=248
 colorscheme hybrid
 " /color scheme
 
