@@ -25,7 +25,6 @@ set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 " /basic rules
 
-set ruler
 " key map
 noremap j gj
 noremap k gk
