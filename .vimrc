@@ -16,6 +16,7 @@ set ignorecase
 set nobackup
 set showbreak=↪
 set incsearch
+set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 " /basic rules
@@ -52,6 +53,7 @@ noremap <Space>f :VimFiler<Enter>
 noremap <Space>n :NERDTreeToggle<Enter>
 " /key map plugin
 
+
 " setting to start vim
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -62,8 +64,16 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'w0ng/vim-hybrid'
+
 
 call neobundle#end()
+
+" color scheme
+colorscheme hybrid
+" /color scheme
 
 NeoBundleCheck
 " /setting to start vim
