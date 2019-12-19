@@ -14,8 +14,10 @@ set showmatch
 set showcmd
 set ignorecase
 set nobackup
-set showbreak=↪
 set incsearch
+nnoremap <silent><Esc><Esc> :<C-u>setnohlsearch!<CR>
+set cursorline
+set wildmenu
 set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
@@ -52,6 +54,20 @@ inoremap " ""<Left>
 noremap <Space>f :VimFiler<Enter>
 noremap <Space>n :NERDTreeToggle<Enter>
 " /key map plugin
+
+
+if &term =~ "xterm"
+    let &t_SI .= "\e[?2004h"
+    let &t_EI .= "\e[?2004l"
+    let &pastetoggle = "\e[201~"
+
+    function XTermPasteBegin(ret)
+        set paste
+        return a:ret
+    endfunction
+
+    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+endif
 
 
 " setting to start vim
