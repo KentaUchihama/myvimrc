@@ -49,8 +49,10 @@ inoremap " ""<Left>
 
 " key map plugin
 noremap <Space>f :VimFiler<Enter>
+noremap <Space>n :NERDTreeToggle<Enter>
 " /key map plugin
 
+" setting to start vim
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -59,9 +61,11 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 
 NeoBundleCheck
+" /setting to start vim
 
 filetype plugin indent on
