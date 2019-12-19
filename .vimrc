@@ -22,6 +22,12 @@ set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 " /basic rules
+"
+"
+"
+"
+"
+"
 
 " key map
 noremap j gj
@@ -33,6 +39,8 @@ noremap <S-j> }
 noremap <S-k> {
 noremap <S-l> $
 noremap == gg=G''
+noremap <S-s> :w<CR>
+noremap <S-q> :q!<CR>
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
