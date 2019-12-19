@@ -37,7 +37,7 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 " /key map
 
-
+" complement bracket
 inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o><TAB>
 inoremap ( ()<ESC>i
@@ -45,3 +45,23 @@ inoremap (<ENTER> ()<Left><CR><ESC><S-o><TAB>
 inoremap < <><Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
+" /complement bracket
+
+" key map plugin
+noremap <Space>f :VimFiler<Enter>
+" /key map plugin
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
+
+call neobundle#end()
+
+NeoBundleCheck
+
+filetype plugin indent on
