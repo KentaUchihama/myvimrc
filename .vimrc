@@ -59,7 +59,7 @@ noremap <Space>f :VimFiler<Enter>
 noremap <Space>n :NERDTreeToggle<Enter>
 " /key map plugin
 
-
+" setting paste mode
 if &term =~ "xterm"
     let &t_SI .= "\e[?2004h"
     let &t_EI .= "\e[?2004l"
@@ -72,7 +72,7 @@ if &term =~ "xterm"
 
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
-
+" /setting paste mode
 
 " setting to start vim
 if has('vim_starting')
