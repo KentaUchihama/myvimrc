@@ -37,6 +37,10 @@ noremap <S-l> $
 noremap == gg=G''
 noremap <S-s> :w<CR>
 noremap <S-q> :q!<CR>
+noremap <Space>h <C-w>h
+noremap <Space>j <C-w>j
+noremap <Space>k <C-w>k
+noremap <Space>l <C-w>l
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
